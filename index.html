@@ -1,87 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Пошук Фільмів</title>
-    <meta name="description" content="Пошук кращих фільмів" />
-    <meta name="keywords" content="фільми, фільми онлайн, hd" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+	<meta charset="UTF-8">
+	<title>Film Box</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="img/icon.jpg" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div class="main">
-    <div class="header">
-        <div class="logo">
-            <div class="logo_text">
-                <h1><a href="index.html">Пошук кращих фільмів</a></h1>
-                <h2>Насолоджуйся разом з нами!</h2>
-            </div>
-        </div>
+<div class="wrapper">
 
-    </div>
-
-    <div class="site_content">
-        <div class="sidebar_container">
-            <div class="sidebar">
-                <h2>Пошук</h2>
-                <form method="post" action="#" id="search_form">
-                    <input type="search" name="search_field" placeholder="Ваш запит">
-                    <input type="submit" class="btn" value="Пошук">
-                </form>
-            </div>
-
-            <div class="sidebar">
-                <h2>Новини</h2>
-                <span>31.01.2020</span>
-                <p>Ми запустим розширений пошук</p>
-            </div>
-            <div class="sidebar">
-                <h2>Рейтинг фильмів</h2>
-                <ul>
-                    <li><a href="show.html">Интерстеллар</a><span class="rating_sidebar">8.1</span></li>
-                    <li><a href="#">Матрица</a><span class="rating_sidebar">8.0</span></li>
-                    <li><a href="#">Безумный макс</a><span class="rating_sidebar">7.5</span></li>
-                    <li><a href="#">Облачный атлас</a><span class="rating_sidebar">7.4</span></li>
-                </ul>
-            </div>
-            <div class="sidebar_button">
-                <a href="#"></a>
-            </div>
-        </div>
-        <!--- - - - - - - - Start main content - - - - - -->
-        <div class="content">
-            <div class="info_film">
-                <img src="img/inter.png">
-                Когда засуха приводит человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету.
-                <div class="button"><a href="show.html">Смотреть</a></div>
-            </div>
-            <div class="info_film">
-                <img src="img/max.png">
-                Когда засуха приводит человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету.
-                <div class="button"><a href="#">Смотреть</a></div>
-            </div>
-            <div class="info_film">
-                <img src="img/matrix.png">
-                Когда засуха приводит человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету.
-                <div class="button"><a href="#">Смотреть</a></div>
-            </div>
-            <div class="info_film">
-                <img src="img/cloud.png">
-                Когда засуха приводит человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и переселить человечество на другую планету.
-                <div class="button"><a href="#">Смотреть</a></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<p id="back-top"><a href="#top"><span></span></a></p>
-
-<script src="js/bootstrap.min.js"></script>
+	<header class="header">
+		<nav class="top">
+			<ul class="top-menu">
+				<li class="top-menu__item">
+					<a href="index.html" class="title-link">Film Box</a>
+					<a href="index.html" class="logo-link">
+						<img src="img/logo.jpg" alt="icon">
+					</a>
 
 
 
+
+				<li class="top-menu__item">
+					<input type="search" placeholder="Search for ..." class="top-menu__search-field placeholder-styles">
+					<button class="top-menu__button search-button">
+						<i class="fas fa-search"></i>
+					</button>
+				</li>
+				<li class="top-menu__item">
+					<button class="top-menu__button sign-in">LOGIN</button>
+					<button class="top-menu__button sign-up">SING UP</button>
+				</li>
+			</ul> <!-- .nav-menu -->
+		</nav> <!-- .nav -->
+		<nav class="nav">
+			<ul class="nav-menu">
+				<li class="nav-menu__item">
+					<button class="nav-menu__button">Popular</button>
+					<button class="nav-menu__button">Top Rated</button>
+					<button class="nav-menu__button">Uncoming</button>
+					<button class="nav-menu__button">Now Playing</button>
+					<li class="nav-menu__button">
+						<button class="btn">Sort by:</button>
+						<div class="dropdown">
+							<button class="btn">
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="dropdown-content">
+								<a href="#">Popularity Descending</a>
+								<a href="#">Popularity Ascending</a>
+								<a href="#">Rating Descending</a>
+								<a href="#">Rating Ascending</a>
+								<a href="#">Release Date Descending</a>
+								<a href="#">Release Date Ascending</a>
+								<a href="#">Title (A-Z)</a>
+								<a href="#">Title (Z-A)</a>
+							</div>
+						</div>
+					</li>
+				</li>
+			</ul>
+		</nav>
+	</header> <!-- .header -->
+	<main class="main">
+		<div class="main-title"><i>Popular</i></div>
+		<div class="main-content">
+			<div class="movie-section">
+				<div class="movie-section__poster">
+					<a href="#" title="Joker">
+						<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="movie-poster">
+					</a>
+				</div>
+				<div class="movie-section__info">
+					<div class="wrapper">
+						<div class="flex">
+							<a class="title result" href="#">Joker</a>
+							<span>October  4, 2019</span>
+						</div>
+					</div>
+					<p class="overview">During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.</p>
+					<p class="view_more"><a href="#" title="Joker">More Info</a></p>
+				</div>
+			</div>
+			<div class="movie-section">
+				<div class="movie-section__poster">
+					<a class="title result" href="#" title="Spider-Man: Far from Home">
+						<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/lcq8dVxeeOqHvvgcte707K0KVx5.jpg" alt="movie-poster">
+					</a>
+				</div>
+				<div class="movie-section__info">
+					<div class="wrapper">
+						<div class="flex">
+							<a class="title result" href="#">Spider-Man: Far from Home</a>
+							<span>July  2, 2019</span>
+						</div>
+					</div>
+					<p class="overview">Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and…</p>
+					<p class="view_more"><a href="#" title="Spider-Man: Far from Home">More Info</a></p>
+				</div>
+			</div>
+			<div class="movie-section">
+				<div class="movie-section__poster">
+					<a class="title result" href="#" title="The Old Man &amp; the Gun">
+						<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/a4BfxRK8dBgbQqbRxPs8kmLd8LG.jpg" alt="movie-poster">
+					</a>
+				</div>
+				<div class="movie-section__info">
+					<div class="wrapper">
+						<div class="flex">
+							<a class="title result" href="#">The Old Man &amp; the Gun</a>
+							<span>September 28, 2018</span>
+						</div>
+					</div>
+					<p class="overview">The true story of Forrest Tucker, from his audacious escape from San Quentin at the age of 70 to an unprecedented string of heists that confounded authorities and enchanted the public. Wrapped up in the pursuit…</p>
+					<p class="view_more"><a href="#" title="The Old Man &amp; the Gun">More Info</a></p>
+				</div>
+			</div>
+			<div class="movie-section">
+				<div class="movie-section__poster">
+					<a class="title result" href="#">
+						<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/zfE0R94v1E8cuKAerbskfD3VfUt.jpg" alt="movie-poster">
+					</a>
+				</div>
+				<div class="movie-section__info">
+					<div class="wrapper">
+						<div class="flex">
+							<a class="title result" href="#">It Chapter Two</a>
+							<span>September  6, 2019</span>
+						</div>
+					</div>
+					<p class="overview">27 years after overcoming the malevolent supernatural entity Pennywise, the former members of the Losers' Club, who have grown up and moved away from Derry, are brought back together by a devastating phone call.</p>
+					<p class="view_more"><a href="#" title="It Chapter Two">More Info</a></p>
+				</div>
+			</div>
+		</div> <!-- .main-content -->
+	</main> <!-- .main -->
+
+	<footer class="footer">
+		<p class="copyright-paragraph">&copy; 2019 Films Box</p>
+	</footer> <!-- .footer -->
+
+</div> <!-- .wrapper -->
+
+<script src="js/script.js"></script>
 </body>
 </html>
