@@ -1,0 +1,105 @@
+.movie-section_view {
+    margin-top: 16px;
+    padding: 30px 0;
+    display: flex;
+    background-color: rgba(70, 35, 35, 0.88);
+    box-sizing: border-box;
+
+}
+.movie-section__info {
+    width:100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 16px 16px 16px 16px;
+    overflow: hidden;
+    display: block;
+}
+.titles{
+    font-size: 2.4em;
+    line-height: 1.1em;
+    font-weight: 700;
+    display: inline-block;
+    color: #ffffff;
+}
+.release_date{
+    opacity: 0.6;
+    font-size: 1.7em;
+    font-weight: 400;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+.rating{
+    padding-top: 8px;
+    opacity: 0.6;
+    font-size: 1.7em;
+    font-weight: 400;
+    color: yellow;
+    -webkit-font-smoothing: antialiased;
+}
+.overview_show {
+    word-wrap: break-word;
+    white-space: normal;
+    color: #ffffff;
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-top: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+
+.featured {
+    margin-bottom: 40px;
+    border-top: 1px solid #e3e3e3;
+    padding: 16px;
+    color: #000;
+    background: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+
+.featured h3{
+    margin-top: 30px;
+}
+.people-no_image{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    line-height: 1.4em;
+    color: #ffffff;
+    padding-left: 16px;
+
+}
+
+.profile a{
+    color: #ffffff;
+}
+.header_info {
+    width: 100%;
+}
+
+.profile {
+    width: 33%;
+    flex-basis: 33%;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+.content{
+    margin: 0 auto;
+}
