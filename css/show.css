@@ -15,27 +15,48 @@
     overflow: hidden;
     display: block;
 }
+
+.movie-section__info .wrapper .flex span {
+    display: contents;
+    font-weight: 300;
+    font-size: 1.1em;
+    line-height: 1em;
+    font-style: italic;
+    color: #ffffff;
+}
+.movie-section__info .wrapper .flex p{
+    font-weight: 300;
+    font-size: 0.8em;
+    line-height: 1em;
+    font-style: italic;
+}
 .titles{
     font-size: 2.4em;
     line-height: 1.1em;
     font-weight: 700;
     display: inline-block;
-    color: #ffffff;
 }
 .release_date{
     opacity: 0.6;
     font-size: 1.7em;
     font-weight: 400;
     color: #ffffff;
+    position: relative;
     -webkit-font-smoothing: antialiased;
 }
 .rating{
-    padding-top: 8px;
-    opacity: 0.6;
-    font-size: 1.7em;
+    padding-top: 5px;
+    font-size: 1em;
     font-weight: 400;
-    color: yellow;
     -webkit-font-smoothing: antialiased;
+}
+.country{
+    padding-top: 5px;
+    font-size: 1em;
+}
+.duration{
+    padding-top: 5px;
+    font-size: 1em;
 }
 .overview_show {
     word-wrap: break-word;
@@ -43,7 +64,7 @@
     color: #ffffff;
     font-size: 1em;
     line-height: 1.2em;
-    margin-top: 40px;
+    margin-top: 30px;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;

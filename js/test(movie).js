@@ -8,7 +8,7 @@ var options= {
     year: 2020
 };
 
-function Movie(options) {
+function TestMovie(options) {
     this.url = options.url;
     this.title = options.title;
     this.image = options.image;
@@ -29,6 +29,6 @@ function Movie(options) {
     }
 }
 
-var film = new Movie(options);
+var film = new TestMovie(options);
 film.getMainInformation();
 film.checkDateFilm();
