@@ -64,6 +64,28 @@ var two = one.bind({foo: "bam"});
 var newThree = two.bind(null);
 console.log(newThree());
 
+// bind 2.0
+var sum = function() {
+    return [].reduce.call(arguments, function(result, current) {
+        return result + current;
+    }, this.sum);
+};
+
+var bind2 = function(fn, context) {
+    // обрезаем ненужные аргументы (функцию и контекст)
+    var bindArgs = [].slice.call(arguments, 2);
+    return function() {
+        // здесь все аргументы будут необходимы
+        var fnArgs = [].slice.call(arguments);
+        // собираем все
+        return fn.apply(context, bindArgs.concat(fnArgs));
+    };
+};
+
+var bindedSum = bind2(sum, {sum: 10}, 20, 30);
+console.log(bindedSum(50, 60, 70));;
+
+
 
 // forEach
 
