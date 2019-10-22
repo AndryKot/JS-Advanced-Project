@@ -33,7 +33,7 @@ function myBind(func, context){
 
 var a = function () {
     return this;
-}
+};
 
 var b = myBind(a, {foo:'var' });
 
