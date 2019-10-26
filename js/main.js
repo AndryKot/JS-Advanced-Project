@@ -1,7 +1,7 @@
 
  var list = new window.MovieListView(moviesArr);
 
- var mov = new window.MovieView();
+
 
 
 //mov.render();

@@ -9,9 +9,9 @@
             this.counter.textContent = this.films.length + ' items';
         }
 
-        this.films.forEach(function(film){
+        this.films.forEach(film => {
             var film = new window.MovieView(film);
-            this.filmsContainer.append(film.getElementById());
+            // this.filmsContainer.append(film.getElementById());
         });
     }
     MovieListView.prorotype ={

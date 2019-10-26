@@ -23,11 +23,11 @@
 
         document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
     }
-    MovieView.prorotype ={
-        render : function()
-        {
-            return  document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
-        }
+    MovieView.prorotype = {
+        render : function() {
+            return document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
+        },
+        getElementById: function() {}
     };
 
     window.MovieView = MovieView;
