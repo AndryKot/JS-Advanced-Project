@@ -1,6 +1,10 @@
 
- let list = new MovieListView(moviesArr);
- let onefilm = new OneMovieView(movieone);
+ var list = new window.MovieListView(moviesArr);
+
+ var mov = new window.MovieView();
+
+
+//mov.render();
 
 
 

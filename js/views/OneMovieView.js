@@ -1,9 +1,9 @@
-
-function OneMovieView(film){
-    this.film = film;
-    this.movie_section = document.createElement('div');
-    this.movie_section.className = "movie-section_view";
-    this.movie_section.innerHTML = `<div class="movie-section__poster">
+(function () {
+    function OneMovieView(film){
+        this.film = film;
+        this.movie_section = document.createElement('div');
+        this.movie_section.className = "movie-section_view";
+        this.movie_section.innerHTML = `<div class="movie-section__poster">
                     <a href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" class="no_click-progres" data-sizes="auto">
                         <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="${this.film.Title}">
                     </a>
@@ -37,12 +37,17 @@ function OneMovieView(film){
                     </ol>
                 </div>`;
 
-    document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
-}
-OneMovieView.prorotype ={
-    render : function()
-    {
-        return document.body.append(this.movie_section);
+        document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
     }
-};
+    OneMovieView.prorotype ={
+        render : function()
+        {
+            document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
+        }
+    };
+    window.OneMovieView =OneMovieView;
+}());
+
+var onefilm = new OneMovieView(movieone);
+
 
