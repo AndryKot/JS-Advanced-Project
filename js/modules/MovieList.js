@@ -22,6 +22,7 @@
         },
         sortByTitle: function () {
             return this.list.sort((a, b) => a.title > b.title ? 1 : -1);
+
         },
         sortByReleaseYear: function () {
             return this.list.sort((a, b) => a.releaseYear < b.releaseYear ? 1 : -1);

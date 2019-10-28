@@ -4,7 +4,7 @@
     function MovieView(film){
         this.film = film;
         this.movie_section = document.createElement('div');
-        this.movie_section.setAttribute = ('class', 'movie-section');
+        this.movie_section.className = ('movie-section');
         this.movie_section.innerHTML = `<div class="movie-section__poster">
 					<a href="show.html" title=${this.film.Title}>
 						<img src="${this.film.imgUrl}" alt="movie-poster">
@@ -21,11 +21,11 @@
 					<p class="view_more"><a href="show.html" title=${this.film.Title}>More Info</a></p>
 				</div>`;
 
-        document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
+        document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterBegin",this.movie_section);
     }
     MovieView.prorotype = {
         render : function() {
-            return document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
+            return document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterBegin",this.movie_section);
         },
         getElementById: function() {}
     };
