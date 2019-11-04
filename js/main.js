@@ -1,5 +1,6 @@
 
- var list = new window.MovieListView(moviesArr);
+debugger;
+var list = new window.MovieListView(moviesArr);
 
 
 

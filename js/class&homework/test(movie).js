@@ -456,27 +456,273 @@ showThis();
 //     this.role =role;
 // }
 //-----------------------------------------------------
-function getName(message, second) {
-    return 'Hello' + message + this.name + second;
+// function getName(message, second) {
+//     return 'Hello' + message + this.name + second;
+// }
+// var user= {
+//     name: 'Max'
+// };
+//
+// var user2 = {
+//     name:'Dima'
+// };
+//
+// var contextWithUserFn=getName.bind(user, ' first arg ');
+// // var contextWithUserFn2=getName.bind(user2);
+//  var newFirstFn = getName.bind(user2, ' second arg ' )
+// console.log(contextWithUserFn());
+// console.log('');
+// contextWithUserFn.call(user2);
+// console.log(newFirstFn());
+// //----------------------------------------------------
+//
+//
+// // forEach, map, some, filter, reduced HOMEWORK
+//
+//
+var moviesArr =[
+    {
+        ID: '1001',
+        shortCode: '',
+        Title: 'Joker',
+        imgUrl: 'https://image.tmdb.org/t/p/w185_and_h278_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg',
+        Rating: 8.1,
+        OpeningDate: 2019,
+        country: ['USA'],
+        translation: 'origin',
+        RunTime: 122,
+        synopsis: 'During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.',
+        producerName: 'Todd Phillips',
+        actorsList: [],
+        trailerUrl: 'https://www.youtube.com/embed/t433PEQGErc'
+    },
+    {
+        ID: '1002',
+        shortCode: '',
+        Title: 'Spider-Man: Far from Home',
+        imgUrl: 'https://image.tmdb.org/t/p/w185_and_h278_bestv2/lcq8dVxeeOqHvvgcte707K0KVx5.jpg',
+        Rating: 7.6,
+        OpeningDate: 2019,
+        country: ['USA'],
+        translation: 'origin',
+        RunTime: 129,
+        synopsis: 'Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.',
+        producerName: 'Jon Watts',
+        actorsList: ['Tom Holland', 'Jake Gyllenhaal', 'Zendaya'],
+        trailerUrl: 'https://www.youtube.com/embed/DYYtuKyMtY8'
+    },
+    {
+        ID: '1004',
+        shortCode: '',
+        Title: 'It Chapter Two',
+        imgUrl: 'https://image.tmdb.org/t/p/w185_and_h278_bestv2/a4BfxRK8dBgbQqbRxPs8kmLd8LG.jpg',
+        Rating: 7.0,
+        OpeningDate: 2019,
+        country: ['USA'],
+        translation: 'origin',
+        RunTime: 169,
+        synopsis: '27 years after overcoming the malevolent supernatural entity Pennywise, the former members of the Losers\' Club, who have grown up and moved away from Derry, are brought back together by a devastating phone call',
+        producerName: 'Andy Muschietti',
+        actorsList: ['James McAvoy', 'Jessica Chastain', 'Bill Hader'],
+        trailerUrl: 'https://www.youtube.com/embed/zqUopiAYdRg'
+    },
+    {
+        ID: '1003',
+        shortCode: '',
+        Title: 'The Old Man & the Gun ',
+        imgUrl: 'https://image.tmdb.org/t/p/w185_and_h278_bestv2/zfE0R94v1E8cuKAerbskfD3VfUt.jpg',
+        Rating: 7.6,
+        OpeningDate: 2018,
+        country: ['USA'],
+        translation: 'origin',
+        RunTime: 93,
+        synopsis: 'The true story of Forrest Tucker, from his audacious escape from San Quentin at the age of 70 to an unprecedented string of heists that confounded authorities and enchanted the public. Wrapped up in the pursuit are a detective, who becomes captivated with Forrest’s commitment to his craft, and a woman, who loves him in spite of his chosen profession.',
+        producerName: 'David Lowery',
+        actorsList: ['Robert Redford', 'Sissy Spacek', 'Casey Affleck'],
+        trailerUrl: 'https://www.youtube.com/embed/d7rlUe-Thvk'
+    },
+    {
+        ID: '1005',
+        shortCode: '',
+        Title: 'The Lion King',
+        imgUrl: '',
+        Rating: 7.1,
+        OpeningDate: 2019,
+        country: ['USA'],
+        translation: 'origin',
+        RunTime: 118,
+        synopsis: 'Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub\'s arrival. Scar, Mufasa\'s brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba\'s exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.',
+        producerName: 'Jon Favreau',
+        actorsList: ['Donald Glover', 'Beyoncé Knowles', 'James Earl Jones'],
+        trailerUrl: 'https://www.youtube.com/embed/4CbLXeGSDxg'
+    }
+];
+
+function Movie(movie) {
+    this.id = movie.ID ;
+    this.title = movie.Title;
+    this.rating = movie.Rating;
+    this.releaseYear = movie.OpeningDate;
+    this.genre = movie.GenreId;
+    this.country = movie.country;
+    this.duration = movie.RunTime;
+    this.synopsis = movie.synopsis;
+    this.producerName = movie.producerName;
+    this.actorsList = movie.actorsList;
+    this.trailerUrl = movie.trailerUrl;
+    this.imgUrl = movie.imgUrl;
 }
-var user= {
-    name: 'Max'
+Movie.prototype ={
+    add: function (key, value) {
+        this[key] = value;
+    },
+    edit: function (key, value) {
+        this[key] = value;
+    },
+    remove: function (key) {
+        delete this[key];
+    }
 };
 
-var user2 = {
-    name:'Dima'
+
+
+
+
+function MovieList(moviesArr) {
+    this.list = moviesArr.map(function (el) {
+        return new Movie(el);
+    });
+}
+MovieList.prototype = {
+    searchMovieById: function(id) {
+        for (var i=0; i < this.list.length; i++){
+            if (this.list[i].id === id){
+                console.log(('You were looking for: ' + this.list[i].title));
+            }
+        }
+    },
+    searchMovieByTitle: function(title) {
+        for (var i=0; i < this.list.length; i++){
+            if (this.list[i].title === title){
+                console.log(('You were looking for: ' + this.list[i].title)+ ' ' + this.list[i].trailerUrl + ' ' + this.list[i].duration);
+            }
+        }
+    },
+    sortByTitle: function() {
+        return this.list.sort((a, b) => a.title > b.title ? 1 : -1);
+    },
+    sortByReleaseYear: function() {
+        return this.list.sort((a, b) => a.releaseYear < b.releaseYear ? 1 : -1);
+    },
+    sortByRating: function() {
+        return this.list.sort((a, b) => a.rating < b.rating ? 1 : -1);
+    },
+
+    seeList: function (){
+        for (var i = 0; i < this.list.length; i++) {
+            console.log (this.list[i]);
+        }
+    },
+    deleteMovie: function(id) {
+        for (var i = 0; i < this.list.length; i++){
+            if (this.list[i].id === id){
+                this.list.splice(i, 1)
+            }
+        }
+        // return this.list.splice(id,1);
+    },
+
+    addMovie: function(movie) {
+        return this.list.push(movie);
+    }
 };
 
-var contextWithUserFn=getName.bind(user, ' first arg ');
-// var contextWithUserFn2=getName.bind(user2);
- var newFirstFn = getName.bind(user2, ' second arg ' )
-console.log(contextWithUserFn());
-console.log('');
-contextWithUserFn.call(user2);
-console.log(newFirstFn());
-//----------------------------------------------------
+
+var movieList = new MovieList(moviesArr);
+
+// movieList.searchMovieByTitle("ПОЛІНА І ТАЄМНИЦЯ КІНОСТУДІЇ");
+// movieList.searchMovieById("HO00000205");
+//movieList.seeList();
+// movieList.deleteMovie("HO00000283");
+// movieList.addMovie(testmovie);
+// movieList.seeList();
+// var film = new Movie(options);
+
+// console.log(film);
+// console.log(film.getTrailerUrl());
+// console.log("============");
+// console.log(movieList.sortByTitle());
+// console.log("============");
+
+// console.log("############");
+//console.log(movieList.sortByReleaseYear());
+// console.log("############");
+
+// console.log("------------");
+// console.log(movieList.sortByRating());
+// console.log("------------");
+
+// movieList.getByPopular();
+//
+// movieList.getPopularMovies();
+//
+// movieList.getUncomingMovies();
+//
+// movieList.getTopRatedMovies();
 
 
-// forEach, map, some, filter, reduced HOMEWORK
+function MovieView(movie) {
+    this.movie = movie;
+    this.movie_section = document.createElement('div');
+    this.movie_section.className ='movie-section';
+    this.movie_section.innerHTML =
+        `<div class="movie-section__poster">
+            <a href="show.html" title=${this.title}>
+                <img src="${this.imgUrl}" alt="movie-poster">
+            </a>
+        </div>
+        <div class="movie-section__info">
+            <div class="wrapper">
+                <div class="flex">
+                    <a class="title result" href="show.html">${this.title}</a>
+                    <span>${this.releaseYear}</span>
+                </div>
+            </div>
+            <p class="overview">${this.synopsis}</p>
+        </div>`;
 
+}
+
+
+MovieView.prototype = {
+    getElement: function() {
+        return this.movie_section;
+    },
+    render: function() {
+        return this.movie_section;
+    }
+};
+
+
+function MovieListView(moviesArr) {
+    this.movies = moviesArr;
+    this.moviesContainer = document.createElement('div');
+    this.moviesContainer.setAttribute('class', 'main-contain');
+}
+
+MovieListView.prototype = {
+    render: function() {
+        this.movies.forEach(movie => {
+            var film = new MovieView(movie);
+            console.log(film);
+            this.moviesContainer.append(film.getElement());
+            return this.moviesContainer;
+
+        });
+    }
+};
+//document.body.movielistview = MovieListView.render();
+var listFilms = new MovieListView(moviesArr);
+//document.body.append(listFilms.render());
+listFilms.render();
 

@@ -65,7 +65,7 @@ button {
 }
 
 .top-menu__search-field {
-	width: 500px;
+	width: 400px;
 	height: 45px;
 	padding: 5px 45px 5px 15px;
 	font-size: 1.2rem;
@@ -115,14 +115,7 @@ button {
 	top: 10px;
 	right: 20px;
 }
-.sign-in {
-	margin-right: 12px;
-	font-size:14px;
-}
-.sign-up {
-	margin-right: 12px;
-	font-size:14px;
-}
+
 .nav-menu {
 	display: flex;
 	justify-content: center;
@@ -131,7 +124,7 @@ button {
 
 .nav-menu__item {
 	position: relative;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	display: flex;
 	align-items: center;
 }

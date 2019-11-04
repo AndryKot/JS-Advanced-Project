@@ -17,7 +17,7 @@
 							<span>${this.film.OpeningDate}</span>
 						</div>
 					</div>
-					<p class="overview">${this.film.synopsis}</p>
+					<p class="overview">${this.film.synopsis.slice(0, ((this.film.synopsis.slice(0, 200)).lastIndexOf(' '))) + " ..."}</p>
 					<p class="view_more"><a href="show.html" title=${this.film.Title}>More Info</a></p>
 				</div>`;
 

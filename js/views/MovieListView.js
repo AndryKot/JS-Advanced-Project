@@ -1,6 +1,7 @@
 (function () {
     function MovieListView(moviesArr){
         this.films = moviesArr;
+
         // this.filmsContainer = document.createElement('div');
         // this.filmsContainer.setAttribute('class', 'movie-section');
         // this.counter = document.querySelector('.main-content');

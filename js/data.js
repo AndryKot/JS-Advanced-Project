@@ -81,7 +81,7 @@ var moviesArr =[
         country: ['USA'],
         translation: 'origin',
         RunTime: 122,
-        synopsis: 'During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.',
+        synopsis: 'During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure. During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.',
         producerName: 'Todd Phillips',
         actorsList: [],
         trailerUrl: 'https://www.youtube.com/embed/t433PEQGErc'
@@ -96,7 +96,7 @@ var moviesArr =[
         country: ['USA'],
         translation: 'origin',
         RunTime: 129,
-        synopsis: 'Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.',
+        synopsis: 'Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.',
         producerName: 'Jon Watts',
         actorsList: ['Tom Holland', 'Jake Gyllenhaal', 'Zendaya'],
         trailerUrl: 'https://www.youtube.com/embed/DYYtuKyMtY8'
@@ -126,7 +126,7 @@ var moviesArr =[
         country: ['USA'],
         translation: 'origin',
         RunTime: 93,
-        synopsis: 'The true story of Forrest Tucker, from his audacious escape from San Quentin at the age of 70 to an unprecedented string of heists that confounded authorities and enchanted the public.',
+        synopsis: 'The true story of Forrest Tucker, from his audacious escape from San Quentin at the age of 70 to an unprecedented string of heists that confounded authorities and enchanted the public. The true story of Forrest Tucker, from his audacious escape from San Quentin at the age of 70 to an unprecedented string of heists that confounded authorities and enchanted the public. The true story of Forrest Tucker, from his audacious escape from San Quentin at the age of 70 to an unprecedented string of heists that confounded authorities and enchanted the public. ',
         producerName: 'David Lowery',
         actorsList: ['Robert Redford', 'Sissy Spacek', 'Casey Affleck'],
         trailerUrl: 'https://www.youtube.com/embed/d7rlUe-Thvk'
@@ -141,7 +141,7 @@ var moviesArr =[
         country: ['USA'],
         translation: 'origin',
         RunTime: 118,
-        synopsis: 'Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba\'s exile.',
+        synopsis: 'Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba\'s exile. Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba\'s exile.',
         producerName: 'Jon Favreau',
         actorsList: ['Donald Glover', 'Beyoncé Knowles', 'James Earl Jones'],
         trailerUrl: 'https://www.youtube.com/embed/4CbLXeGSDxg'
