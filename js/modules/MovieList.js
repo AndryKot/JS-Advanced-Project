@@ -1,24 +1,23 @@
 (function() {
     function MovieList(moviesArr) {
-        this.list = moviesArr.map(function (el) {
-            return new Movie(el);
-        });
+        this.URL = 'http://localhost:3000/films';
     }
 
     MovieList.prototype = {
-        searchMovieById: function (id) {
-            for (var i = 0; i < this.list.length; i++) {
-                if (this.list[i].id === id) {
-                    console.log(('You were looking for: ' + this.list[i].title));
-                }
-            }
+        searchMovieByTitle: function (title) {return window.movieListData.find(item => item.Title === title);
         },
-        searchMovieByTitle: function (title) {
-            for (var i = 0; i < this.list.length; i++) {
-                if (this.list[i].title === title) {
-                    console.log(('You were looking for: ' + this.list[i].title) + ' ' + this.list[i].trailerUrl + ' ' + this.list[i].duration);
-                }
-            }
+        getAll: function (onSuccess) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', this.URL);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send();
+
+            xhr.addEventListener('load', function() {
+                onSuccess(JSON.parse(xhr.response).list);
+            });
+        },
+        getById: function (id) {
+            return window.movieListData.find(item => item.ID === id);
         },
         sortByTitle: function () {
             return this.list.sort((a, b) => a.title > b.title ? 1 : -1);
@@ -30,34 +29,44 @@
         sortByRating: function () {
             return this.list.sort((a, b) => a.rating < b.rating ? 1 : -1);
         },
-        getById: function (id) {
-            return this.list.find(function (item){
-                return item.id === id;
-            });
-        },
 
-        seeList: function () {
-            for (var i = 0; i < this.list.length; i++) {
-                console.log(this.list[i]);
-            }
-        },
+
         deleteMovie: function (id) {
-            for (var i = 0; i < this.list.length; i++) {
-                if (this.list[i].id === id) {
-                    this.list.splice(i, 1)
-                }
+            var message = confirm('Remove movie ' + id + ' from the list?');
+            if (message) {
+                var data = {
+                    id: id
+                };
+                var xhr = new XMLHttpRequest();
+                xhr.open('DELETE', this.URL);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(data));
             }
-            // return this.list.splice(id,1);
         },
+        addMovie: function (data) {
+            var xhr = new XMLHttpRequest();
+            var data = {
+                movie: data
+            };
+            xhr.open('POST', this.URL);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(data));
+        },
+        editMovie: function (id, newData) {
+            var data = {
+                id: id,
+                options: newData
+            };
 
-        addMovie: function (movie) {
-            return this.list.push(movie);
-        },
-        render: function () {
-            this.list.map(function (el) {
-                return this.list[el].title + ', ';
+            var xhr = new XMLHttpRequest();
+            xhr.open('PUT', this.URL);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(data));
+
+            xhr.addEventListener('load', function() {
+                onSuccess(JSON.parse(xhr.response).list);
             });
         }
     };
-    window.MovieList = MovieList;
+    window.movieList = new MovieList();
 }());

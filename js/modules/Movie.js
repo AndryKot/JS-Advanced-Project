@@ -1,17 +1,17 @@
 (function () {
-    function Movie(movie) {
-        this.id = movie.ID;
-        this.title = movie.Title;
-        this.rating = movie.Rating;
-        this.releaseYear = movie.OpeningDate;
-        this.genre = movie.GenreId;
-        this.country = movie.SynopsisAlt;
-        this.translation = movie.TwitterTag;
-        this.duration = movie.RunTime;
-        this.synopsis = movie.Synopsis;
-        this.producerName = movie.producerName;
-        this.actorsList = movie.actorsList;
-        this.trailerUrl = movie.TrailerUrl;
+    function Movie(options) {
+        this.id = options.ID;
+        this.title = options.Title;
+        this.rating = options.Rating;
+        this.releaseYear = options.OpeningDate;
+        this.genre = options.GenreId;
+        this.country = options.SynopsisAlt;
+        this.translation = options.TwitterTag;
+        this.duration = options.RunTime;
+        this.synopsis = options.Synopsis;
+        this.producerName = options.producerName;
+        this.actorsList = options.actorsList;
+        this.trailerUrl = options.TrailerUrl;
     }
     Movie.prototype ={
         add: function (key, value) {

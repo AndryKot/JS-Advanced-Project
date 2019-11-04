@@ -1,9 +1,10 @@
 (function () {
-    function OneMovieView(film){
-        this.film = film;
+    function OneMovieView(id){
+        this.id = id;
         this.movie_section = document.createElement('div');
         this.movie_section.className = "movie-section_view";
-        this.movie_section.innerHTML = `<div class="movie-section__poster">
+        this.film = movieList.getById(this.id);
+        var movieHtml = `<div class="movie-section__poster">
                     <a href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" class="no_click-progres" data-sizes="auto">
                         <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="${this.film.Title}">
                     </a>
@@ -32,22 +33,36 @@
                             <p><a href="#">${this.film.actorsList}</a></p>
                             <p class="character">Actors:</p>
                         </li>
-
+                        <li>
+                            <button type="button" id="play-button" class="btn btn-promo btn-lg pl-4 pr-4 movie__trailer-button"><span>Watch trailer</span></button>
+                            <button type="button" id="edit-button" data-popup-close class="btn btn-casual btn-lg pl-4 pr-4 movie__edit-button"><span>Edit</span>
+                        </li>
 
                     </ol>
                 </div>`;
 
-        document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
+        this.movie_section.insertAdjacentHTML('beforeend', movieHtml);
     }
     OneMovieView.prorotype ={
         render : function()
         {
-            document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterbegin",this.movie_section);
+            return this.movie_section;
+        },
+        renderModal : function () {
+            var modal = new window.ModalView(this.render());
+            modal.showModal();
+
+            var editBtn = document.querySelector('#edit-button');
+
+            editBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                var movie = new MovieEditView(this.movie);
+                movie.renderModal();
+            }.bind(this));
         }
     };
-    window.OneMovieView =OneMovieView;
+    window.OneMovieView = OneMovieView;
 }());
-
-var onefilm = new OneMovieView(movieone);
 
 

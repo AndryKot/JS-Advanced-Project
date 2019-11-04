@@ -2,34 +2,32 @@
 (function () {
 
     function MovieView(film){
-        this.film = film;
         this.movie_section = document.createElement('div');
         this.movie_section.className = ('movie-section');
-        this.movie_section.innerHTML = `<div class="movie-section__poster">
-					<a href="show.html" title=${this.film.Title}>
-						<img src="${this.film.imgUrl}" alt="movie-poster">
+
+        var title = ` <div class="tile" data-modal-toggle="${film.ID}">
+                <div class="movie-section__poster" >
+					<a href="show.html" title=${film.Title}>
+						<img src="${film.imgUrl}" alt="movie-poster">
 					</a>
 				</div>
 				<div class="movie-section__info">
 					<div class="wrapper">
 						<div class="flex">
-							<a class="title result" href="show.html">${this.film.Title}</a>
-							<span>${this.film.OpeningDate}</span>
+							<a class="title result" href="show.html">${film.Title}</a>
+							<span>${film.OpeningDate}</span>
 						</div>
 					</div>
-					<p class="overview">${this.film.synopsis.slice(0, ((this.film.synopsis.slice(0, 200)).lastIndexOf(' '))) + " ..."}</p>
-					<p class="view_more"><a href="show.html" title=${this.film.Title}>More Info</a></p>
-				</div>`;
+					<p class="overview">${film.synopsis.slice(0, ((film.synopsis.slice(0, 200)).lastIndexOf(' '))) + " ..."}</p>
+					<p class="view_more"><a href="show.html" title=${film.Title}>More Info</a></p>
+				</div>
+         </div>`;
 
-        document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterBegin",this.movie_section);
+        this.movie_section.insertAdjacentElement("beforeend",title);
     }
-    MovieView.prorotype = {
-        render : function() {
-            return document.querySelector("body > div > main > div.main-content").insertAdjacentElement("afterBegin",this.movie_section);
-        },
-        getElementById: function() {}
-    };
-
+    MovieView.prorotype.getElement = function() {
+            return this.element;
+        };
     window.MovieView = MovieView;
 }());
 

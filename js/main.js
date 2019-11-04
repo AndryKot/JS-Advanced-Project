@@ -1,6 +1,8 @@
-
-debugger;
 var list = new window.MovieListView(moviesArr);
+window.movieList.getAll(function(data) {
+    movieListView.render(data, document.querySelector('.movielist-container'));
+    window.movieListData = data;
+});
 
 
 
