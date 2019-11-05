@@ -6,11 +6,11 @@
         this.releaseYear = options.OpeningDate;
         this.genre = options.GenreId;
         this.country = options.SynopsisAlt;
-        this.translation = options.TwitterTag;
+        this.titleAlt = options.TitleAlt;
         this.duration = options.RunTime;
-        this.synopsis = options.Synopsis;
-        this.producerName = options.producerName;
-        this.actorsList = options.actorsList;
+        this.synopsis = options.Info ;
+        this.producerName = options.Director;
+        this.actorsList = options.Actors;
         this.trailerUrl = options.TrailerUrl;
     }
     Movie.prototype ={

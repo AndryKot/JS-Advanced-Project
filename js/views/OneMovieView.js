@@ -3,6 +3,7 @@
         this.id = id;
         this.movie_section = document.createElement('div');
         this.movie_section.className = "movie-section_view";
+        debugger;
         this.film = movieList.getById(this.id);
         var movieHtml = `<div class="movie-section__poster">
                     <a href="https://image.tmdb.org/t/p/w300_and_h450_bestv2/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" class="no_click-progres" data-sizes="auto">
@@ -39,7 +40,10 @@
                         </li>
 
                     </ol>
-                </div>`;
+                </div>
+            <div class="content">
+                <iframe width="1110" height="633" src="https://www.youtube.com/embed/t433PEQGErc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>`;
 
         this.movie_section.insertAdjacentHTML('beforeend', movieHtml);
     }
