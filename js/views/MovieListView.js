@@ -61,7 +61,7 @@
                 if (!e.target.closest('.tile')) return;
 
                 var id = e.target.closest('.tile').dataset.modalToggle;
-                var movieDetails = new window.MovieView(id);
+                var movieDetails = new window.OneMovieView(id);
 
                 movieDetails.renderModal();
             });
