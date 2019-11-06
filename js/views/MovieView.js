@@ -26,7 +26,7 @@
         this.movie_section.insertAdjacentElement("beforeend",title);
     }
     MovieView.prorotype.getElement = function() {
-            return this.element;
+            return this.movie_section;
         };
     window.MovieView = MovieView;
 }());
